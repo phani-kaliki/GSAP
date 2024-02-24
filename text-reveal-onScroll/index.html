@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reveal onLoad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        header{
+            display: grid;
+            place-content: center;
+            height: 100vh;
+        }
+        h1{
+            font-size: 7rem;
+            text-transform: uppercase;
+            font-family: 'Bebas Neue';
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            line-height: 6rem;
+        }
+        .char{
+            transform: translateY(115px);
+            transition: transform 0.5s;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="my-text">Shanmuka phani</h1>
+    </header>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const myText = new SplitType('#my-text')
+
+        gsap.to('.char', {
+            y: 0,
+            stagger: 0.07,
+            delay: 0.2,
+            duration:0.1
+        })
+    </script>
+</body>
+</html>
